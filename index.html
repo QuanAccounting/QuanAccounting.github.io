@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quan Accounting | CPA Gatineau-Ottawa</title>
+  <meta name="description" content="Quan Accounting — Services comptables bilingues à Gatineau-Ottawa. Impôt personnel T1, tenue de livres, et planification financière pour particuliers et PME." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1B3A5C;
+      --navy-deep: #122840;
+      --gold: #B8922A;
+      --gold-light: #D4A843;
+      --cream: #FAF8F4;
+      --warm-white: #FFFFFF;
+      --text: #1a1a1a;
+      --text-mid: #4a4a4a;
+      --text-light: #7a7a7a;
+      --rule: rgba(184,146,42,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LANGUAGE TOGGLE ── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .lang-btn.active {
+      background: var(--gold);
+      color: var(--navy-deep);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* Hide/show language content */
+    [data-lang="en"] { display: none; }
+    body.lang-en [data-lang="fr"] { display: none; }
+    body.lang-en [data-lang="en"] { display: revert; }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(27,58,92,0.97);
+      backdrop-filter: blur(8px);
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      border-bottom: 1px solid rgba(184,146,42,0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-monogram {
+      width: 38px; height: 38px;
+      border: 1.5px solid var(--gold);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--warm-white);
+      letter-spacing: 0.3px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold) !important;
+      padding: 7px 18px;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--navy-deep) !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      padding: 100px 5vw 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -80px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,146,42,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--warm-white);
+      margin-bottom: 24px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-body {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 36px;
+      max-width: 420px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); }
+
+    .btn-secondary {
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 3px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: white;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,146,42,0.2);
+      border-radius: 8px;
+      padding: 40px;
+    }
+
+    .hero-card-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .credential-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .credential-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .credential-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .credential-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+
+    .credential-text strong {
+      display: block;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 2px;
+    }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 96px 5vw; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    .section-header { margin-bottom: 56px; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--warm-white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .service-card {
+      background: var(--warm-white);
+      padding: 40px 36px;
+      transition: background 0.2s;
+    }
+
+    .service-card:hover { background: #FDFBF7; }
+
+    .service-icon { font-size: 22px; margin-bottom: 20px; }
+
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .service-detail {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .stat-cell {
+      background: var(--warm-white);
+      padding: 28px 24px;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── BILINGUAL BANNER ── */
+    .bilingual-banner {
+      background: var(--navy);
+      padding: 56px 5vw;
+    }
+
+    .bilingual-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .bilingual-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 400;
+      color: var(--warm-white);
+      line-height: 1.4;
+    }
+
+    .bilingual-text em { color: var(--gold-light); font-style: italic; }
+
+    .bilingual-note {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      max-width: 280px;
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--warm-white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 28px;
+      align-items: flex-start;
+    }
+
+    .contact-icon { font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .contact-value a { color: var(--navy); text-decoration: none; font-weight: 400; }
+    .contact-value a:hover { color: var(--gold); }
+
+    .contact-form-note {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding: 24px 28px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .contact-form-note p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .contact-form-note p:last-child { margin-bottom: 0; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy-deep); padding: 40px 5vw; }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── PRICING ── */
+    #pricing { background: var(--cream); }
+
+    .pricing-intro {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 48px;
+      padding: 16px 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(184,146,42,0.05);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .pricing-card {
+      background: var(--warm-white);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .pricing-card-header {
+      background: var(--navy);
+      padding: 24px 28px;
+    }
+
+    .pricing-card-icon { font-size: 18px; margin-bottom: 10px; }
+
+    .pricing-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--warm-white);
+      margin-bottom: 4px;
+    }
+
+    .pricing-card-subtitle {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .pricing-tiers { padding: 8px 0; }
+
+    .pricing-tier {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      border-bottom: 1px solid rgba(184,146,42,0.1);
+      gap: 16px;
+    }
+
+    .pricing-tier:last-child { border-bottom: none; }
+
+    .pricing-tier-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .pricing-tier-detail {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .pricing-tier-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--navy);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .pricing-tier-price span {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .pricing-wide { grid-column: 1 / -1; }
+
+    /* ── BOOKING ── */
+    #booking { background: var(--navy-deep); }
+
+    #booking .section-eyebrow { color: var(--gold); }
+    #booking .section-title { color: var(--warm-white); }
+    #booking .section-subtitle { color: rgba(255,255,255,0.55); }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .service-selector { display: flex; flex-direction: column; gap: 12px; }
+
+    .service-option {
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .service-option:hover {
+      border-color: rgba(184,146,42,0.4);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .service-option.selected {
+      border-color: var(--gold);
+      background: rgba(184,146,42,0.08);
+    }
+
+    .service-option-check {
+      width: 20px; height: 20px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .service-option.selected .service-option-check {
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+
+    .service-option-check::after {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--navy-deep);
+      display: none;
+    }
+
+    .service-option.selected .service-option-check::after { display: block; }
+
+    .service-option-body { flex: 1; }
+
+    .service-option-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--warm-white);
+      margin-bottom: 3px;
+    }
+
+    .service-option-desc {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+    }
+
+    .service-option-deposit {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .booking-summary {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,146,42,0.2);
+      border-radius: 8px;
+      padding: 32px;
+      position: sticky;
+      top: 84px;
+    }
+
+    .booking-summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--warm-white);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .booking-empty {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      padding: 24px 0;
+      font-style: italic;
+    }
+
+    .booking-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      gap: 12px;
+    }
+
+    .booking-line-name {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      flex: 1;
+    }
+
+    .booking-line-price {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold-light);
+    }
+
+    .booking-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(184,146,42,0.3);
+    }
+
+    .booking-total-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .booking-total-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--warm-white);
+    }
+
+    .booking-note {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.6;
+      margin-top: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn-pay {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-pay:hover { background: var(--gold-light); }
+    .btn-pay:disabled {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.3);
+      cursor: not-allowed;
+    }
+
+    /* Payment modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--warm-white);
+      border-radius: 10px;
+      padding: 40px;
+      width: 100%;
+      max-width: 480px;
+      margin: 20px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      font-size: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-light);
+      line-height: 1;
+    }
+
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .modal-subtitle {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+    }
+
+    .modal-field { margin-bottom: 16px; }
+
+    .modal-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+    }
+
+    .modal-input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .modal-input:focus { border-color: var(--navy); }
+
+    #card-element {
+      padding: 11px 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+
+    #card-element.StripeElement--focus { border-color: var(--navy); }
+
+    .modal-summary {
+      background: var(--cream);
+      border-radius: 4px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .modal-summary strong { color: var(--navy); font-weight: 600; }
+
+    #pay-btn {
+      width: 100%;
+      background: var(--navy);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+
+    #pay-btn:hover { background: var(--navy-deep); }
+    #pay-btn:disabled { background: #aaa; cursor: not-allowed; }
+
+    #payment-message {
+      font-size: 13px;
+      color: #c0392b;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .modal-secure {
+      font-size: 11px;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .services-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-wide { grid-column: 1; }
+      .booking-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-actions { flex-direction: column; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-monogram">QA</div>
+      <span class="nav-name">Quan Accounting</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#services" data-lang="fr">Services</a><a href="#services" data-lang="en">Services</a></li>
+        <li><a href="#pricing" data-lang="fr">Tarifs</a><a href="#pricing" data-lang="en">Pricing</a></li>
+        <li><a href="#booking" data-lang="fr">Réserver</a><a href="#booking" data-lang="en">Book</a></li>
+        <li><a href="#about" data-lang="fr">À propos</a><a href="#about" data-lang="en">About</a></li>
+        <li><a href="#contact" class="nav-cta" data-lang="fr">Nous joindre</a><a href="#contact" class="nav-cta" data-lang="en">Contact us</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow">CPA — Gatineau · Ottawa</p>
+        <h1 class="hero-title">
+          <span data-lang="fr">Une comptabilité<br><em>rigoureuse,</em><br>une relation de confiance.</span>
+          <span data-lang="en">Rigorous accounting.<br><em>Trusted</em> advice.<br>Local expertise.</span>
+        </h1>
+        <p class="hero-body" data-lang="fr">Quan Accounting offre des services comptables bilingues aux particuliers et aux petites entreprises de la région de Gatineau-Ottawa. Impôt personnel, tenue de livres, planification financière.</p>
+        <p class="hero-body" data-lang="en">Quan Accounting provides bilingual accounting services to individuals and small businesses in the Gatineau-Ottawa region. Personal tax, bookkeeping, and financial planning.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary" data-lang="fr">Prendre rendez-vous</a>
+          <a href="#contact" class="btn-primary" data-lang="en">Book a consultation</a>
+          <a href="#services" class="btn-secondary" data-lang="fr">Nos services</a>
+          <a href="#services" class="btn-secondary" data-lang="en">Our services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <p class="hero-card-label">Frédéric Létourneau-Quan, CPA</p>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            <strong data-lang="fr">Comptable professionnel agréé</strong>
+            <strong data-lang="en">Chartered Professional Accountant</strong>
+            <span data-lang="fr">Plus de 6 ans d'expérience en fiscalité canadienne et québécoise</span>
+            <span data-lang="en">6+ years of experience in Canadian and Quebec taxation</span>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            <strong data-lang="fr">Bilingue — Français &amp; English</strong>
+            <strong data-lang="en">Bilingual — French &amp; English</strong>
+            <span data-lang="fr">Services complets dans les deux langues officielles</span>
+            <span data-lang="en">Full services available in both official languages</span>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            <strong data-lang="fr">Spécialiste T1 &amp; Revenu Québec</strong>
+            <strong data-lang="en">T1 &amp; Revenu Québec Specialist</strong>
+            <span data-lang="fr">Déclarations fédérales et provinciales, crédits, situations complexes</span>
+            <span data-lang="en">Federal and provincial returns, credits, and complex situations</span>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            <strong data-lang="fr">Pratique solo — attention personnalisée</strong>
+            <strong data-lang="en">Solo practice — personalized attention</strong>
+            <span data-lang="fr">Vous parlez toujours directement avec votre comptable</span>
+            <span data-lang="en">You always speak directly with your accountant</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="section-eyebrow" data-lang="fr">Ce que nous offrons</p>
+        <p class="section-eyebrow" data-lang="en">What we offer</p>
+        <h2 class="section-title" data-lang="fr">Services comptables pour particuliers et PME</h2>
+        <h2 class="section-title" data-lang="en">Accounting services for individuals and small businesses</h2>
+        <p class="section-subtitle" data-lang="fr">Des services ciblés, livrés avec la rigueur d'un CPA et l'accessibilité d'une pratique locale.</p>
+        <p class="section-subtitle" data-lang="en">Focused services delivered with the rigour of a CPA and the accessibility of a local practice.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3 class="service-title" data-lang="fr">Impôt personnel T1</h3>
+          <h3 class="service-title" data-lang="en">Personal Tax (T1)</h3>
+          <p class="service-desc" data-lang="fr">Préparation complète de votre déclaration fédérale et provinciale. Revenus d'emploi, de location, de travail autonome, placements, et situations multiprovinciales.</p>
+          <p class="service-desc" data-lang="en">Complete preparation of your federal and provincial tax return. Employment, rental, self-employment, investment income, and multi-provincial situations.</p>
+          <span class="service-detail" data-lang="fr">Particuliers · Travailleurs autonomes · Propriétaires</span>
+          <span class="service-detail" data-lang="en">Individuals · Self-employed · Rental owners</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📒</div>
+          <h3 class="service-title" data-lang="fr">Tenue de livres</h3>
+          <h3 class="service-title" data-lang="en">Bookkeeping</h3>
+          <p class="service-desc" data-lang="fr">Enregistrement et classement de vos transactions, conciliation bancaire, et préparation de vos états financiers pour faciliter vos décisions d'affaires.</p>
+          <p class="service-desc" data-lang="en">Transaction recording, bank reconciliation, and financial statement preparation to support your business decisions.</p>
+          <span class="service-detail" data-lang="fr">PME · Travailleurs autonomes</span>
+          <span class="service-detail" data-lang="en">Small businesses · Self-employed</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3 class="service-title" data-lang="fr">Planification financière</h3>
+          <h3 class="service-title" data-lang="en">Financial Planning</h3>
+          <p class="service-desc" data-lang="fr">Stratégies fiscales adaptées à votre situation — REER, CELI, revenus de retraite, fractionnement du revenu, et optimisation de votre charge fiscale globale.</p>
+          <p class="service-desc" data-lang="en">Tax strategies tailored to your situation — RRSP, TFSA, retirement income, income splitting, and overall tax optimization.</p>
+          <span class="service-detail" data-lang="fr">Particuliers · Familles · Propriétaires d'entreprise</span>
+          <span class="service-detail" data-lang="en">Individuals · Families · Business owners</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="section-eyebrow" data-lang="fr">Tarifs</p>
+        <p class="section-eyebrow" data-lang="en">Pricing</p>
+        <h2 class="section-title" data-lang="fr">Des honoraires transparents, sans surprise.</h2>
+        <h2 class="section-title" data-lang="en">Transparent fees, no surprises.</h2>
+      </div>
+      <div class="pricing-intro" data-lang="fr">
+        Les honoraires varient selon la complexité de votre dossier — nombre de feuillets, revenus impliqués, et qualité des documents fournis. Les fourchettes ci-dessous représentent les cas typiques. Une soumission précise vous sera remise avant le début des travaux.
+      </div>
+      <div class="pricing-intro" data-lang="en">
+        Fees vary depending on the complexity of your file — number of slips, types of income, and quality of documents provided. The ranges below reflect typical cases. A precise quote will be provided before work begins.
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- T1 Personal Tax -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <div class="pricing-card-icon">📋</div>
+            <h3 class="pricing-card-title" data-lang="fr">Impôt personnel T1</h3>
+            <h3 class="pricing-card-title" data-lang="en">Personal Tax (T1)</h3>
+            <p class="pricing-card-subtitle" data-lang="fr">Déclaration fédérale + provinciale</p>
+            <p class="pricing-card-subtitle" data-lang="en">Federal + provincial return</p>
+          </div>
+          <div class="pricing-tiers">
+            <div class="pricing-tier">
+              <div>
+                <div class="pricing-tier-label" data-lang="fr">Simple</div>
+                <div class="pricing-tier-label" data-lang="en">Simple</div>
+                <div class="pricing-tier-detail" data-lang="fr">1–2 feuillets, aucun annexe complexe</div>
+                <div class="pricing-tier-detail" data-lang="en">1–2 slips, no complex schedules</div>
+              </div>
+              <div class="pricing-tier-price">$175 – $250<span data-lang="fr">par déclaration</span><span data-lang="en">per return</span></div>
+            </div>
+            <div class="pricing-tier">
+              <div>
+                <div class="pricing-tier-label" data-lang="fr">Standard</div>
+                <div class="pricing-tier-label" data-lang="en">Standard</div>
+                <div class="pricing-tier-detail" data-lang="fr">Plusieurs feuillets, REER, dons, médical</div>
+                <div class="pricing-tier-detail" data-lang="en">Multiple slips, RRSP, donations, medical</div>
+              </div>
+              <div class="pricing-tier-price">$250 – $400<span data-lang="fr">par déclaration</span><span data-lang="en">per return</span></div>
+            </div>
+            <div class="pricing-tier">
+              <div>
+                <div class="pricing-tier-label" data-lang="fr">Complexe</div>
+                <div class="pricing-tier-label" data-lang="en">Complex</div>
+                <div class="pricing-tier-detail" data-lang="fr">Location, travail autonome, multiprovincial</div>
+                <div class="pricing-tier-detail" data-lang="en">Rental, self-employment, multi-provincial</div>
+              </div>
+              <div class="pricing-tier-price">$400 – $700+<span data-lang="fr">par déclaration</span><span data-lang="en">per return</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bookkeeping + Planning -->
+        <div>
+          <!-- Bookkeeping -->
+          <div class="pricing-card" style="margin-bottom: 24px;">
+            <div class="pricing-card-header">
+              <div class="pricing-card-icon">📒</div>
+              <h3 class="pricing-card-title" data-lang="fr">Tenue de livres</h3>
+              <h3 class="pricing-card-title" data-lang="en">Bookkeeping</h3>
+              <p class="pricing-card-subtitle" data-lang="fr">Services mensuels</p>
+              <p class="pricing-card-subtitle" data-lang="en">Monthly services</p>
+            </div>
+            <div class="pricing-tiers">
+              <div class="pricing-tier">
+                <div>
+                  <div class="pricing-tier-label" data-lang="fr">PME / Travailleur autonome</div>
+                  <div class="pricing-tier-label" data-lang="en">Small business / Self-employed</div>
+                  <div class="pricing-tier-detail" data-lang="fr">Selon volume de transactions</div>
+                  <div class="pricing-tier-detail" data-lang="en">Based on transaction volume</div>
+                </div>
+                <div class="pricing-tier-price">$300 – $600<span data-lang="fr">par mois</span><span data-lang="en">per month</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Financial Planning -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <div class="pricing-card-icon">📈</div>
+              <h3 class="pricing-card-title" data-lang="fr">Planification financière</h3>
+              <h3 class="pricing-card-title" data-lang="en">Financial Planning</h3>
+              <p class="pricing-card-subtitle" data-lang="fr">Consultation individuelle</p>
+              <p class="pricing-card-subtitle" data-lang="en">Individual consultation</p>
+            </div>
+            <div class="pricing-tiers">
+              <div class="pricing-tier">
+                <div>
+                  <div class="pricing-tier-label" data-lang="fr">Taux horaire</div>
+                  <div class="pricing-tier-label" data-lang="en">Hourly rate</div>
+                  <div class="pricing-tier-detail" data-lang="fr">REER, CELI, retraite, optimisation fiscale</div>
+                  <div class="pricing-tier-detail" data-lang="en">RRSP, TFSA, retirement, tax optimization</div>
+                </div>
+                <div class="pricing-tier-price">$150 – $200<span data-lang="fr">par heure</span><span data-lang="en">per hour</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <p class="section-eyebrow" data-lang="fr">À propos</p>
+          <p class="section-eyebrow" data-lang="en">About</p>
+          <h2 class="section-title" data-lang="fr">Une pratique fondée sur l'expertise et la proximité.</h2>
+          <h2 class="section-title" data-lang="en">A practice built on expertise and accessibility.</h2>
+          <div class="about-rule"></div>
+          <p class="about-body" data-lang="fr">Quan Accounting est une pratique solo basée à Gatineau, au cœur de la région de la capitale nationale. Frédéric Létourneau-Quan, CPA, y offre des services comptables personnalisés depuis plus de six ans — avec une attention particulière aux particularités fiscales du Québec et aux situations de résidents de l'Ontario travaillant en zone frontalière.</p>
+          <p class="about-body" data-lang="en">Quan Accounting is a solo practice based in Gatineau, at the heart of the National Capital Region. Frédéric Létourneau-Quan, CPA, has been providing personalized accounting services for over six years — with particular expertise in Quebec tax and cross-border Ontario/Quebec situations.</p>
+          <p class="about-body" data-lang="fr">Travailler avec une pratique solo signifie que vous avez toujours accès à votre comptable directement. Pas de délégation, pas de surprises. Juste une relation professionnelle claire et continue.</p>
+          <p class="about-body" data-lang="en">Working with a solo practice means you always have direct access to your accountant. No handoffs, no surprises. Just a clear and consistent professional relationship.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-cell">
+            <div class="stat-number">6+</div>
+            <div class="stat-label" data-lang="fr">Années d'expérience</div>
+            <div class="stat-label" data-lang="en">Years of experience</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number">2</div>
+            <div class="stat-label" data-lang="fr">Langues de service</div>
+            <div class="stat-label" data-lang="en">Languages of service</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number">QC</div>
+            <div class="stat-label" data-lang="fr">&amp; Ontario — couverture biprovinc.</div>
+            <div class="stat-label" data-lang="en">&amp; Ontario — cross-provincial coverage</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number">CPA</div>
+            <div class="stat-label" data-lang="fr">Titre professionnel reconnu</div>
+            <div class="stat-label" data-lang="en">Recognized professional designation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="section-eyebrow" data-lang="fr">Réserver</p>
+        <p class="section-eyebrow" data-lang="en">Book a service</p>
+        <h2 class="section-title" data-lang="fr">Sélectionnez vos services et versez un dépôt.</h2>
+        <h2 class="section-title" data-lang="en">Select your services and pay a deposit.</h2>
+        <p class="section-subtitle" data-lang="fr">Un dépôt confirme votre dossier. Le solde sera facturé à la livraison des travaux.</p>
+        <p class="section-subtitle" data-lang="en">A deposit secures your file. The balance will be invoiced upon completion of the work.</p>
+      </div>
+
+      <div class="booking-grid">
+        <!-- Service selector -->
+        <div class="service-selector" id="service-selector">
+
+          <div class="service-option" data-name-fr="Impôt T1 — Simple" data-name-en="T1 Tax — Simple" data-deposit="100" onclick="toggleService(this)">
+            <div class="service-option-check"></div>
+            <div class="service-option-body">
+              <div class="service-option-name" data-lang="fr">Impôt T1 — Simple</div>
+              <div class="service-option-name" data-lang="en">T1 Tax — Simple</div>
+              <div class="service-option-desc" data-lang="fr">1–2 feuillets, aucun annexe complexe · Frais estimés $175–$250</div>
+              <div class="service-option-desc" data-lang="en">1–2 slips, no complex schedules · Estimated $175–$250</div>
+            </div>
+            <div class="service-option-deposit">$100 dépôt</div>
+          </div>
+
+          <div class="service-option" data-name-fr="Impôt T1 — Standard" data-name-en="T1 Tax — Standard" data-deposit="150" onclick="toggleService(this)">
+            <div class="service-option-check"></div>
+            <div class="service-option-body">
+              <div class="service-option-name" data-lang="fr">Impôt T1 — Standard</div>
+              <div class="service-option-name" data-lang="en">T1 Tax — Standard</div>
+              <div class="service-option-desc" data-lang="fr">Plusieurs feuillets, REER, dons, médical · Frais estimés $250–$400</div>
+              <div class="service-option-desc" data-lang="en">Multiple slips, RRSP, donations, medical · Estimated $250–$400</div>
+            </div>
+            <div class="service-option-deposit">$150 dépôt</div>
+          </div>
+
+          <div class="service-option" data-name-fr="Impôt T1 — Complexe" data-name-en="T1 Tax — Complex" data-deposit="200" onclick="toggleService(this)">
+            <div class="service-option-check"></div>
+            <div class="service-option-body">
+              <div class="service-option-name" data-lang="fr">Impôt T1 — Complexe</div>
+              <div class="service-option-name" data-lang="en">T1 Tax — Complex</div>
+              <div class="service-option-desc" data-lang="fr">Location, travail autonome, multiprovincial · Frais estimés $400–$700+</div>
+              <div class="service-option-desc" data-lang="en">Rental, self-employment, multi-provincial · Estimated $400–$700+</div>
+            </div>
+            <div class="service-option-deposit">$200 dépôt</div>
+          </div>
+
+          <div class="service-option" data-name-fr="Tenue de livres" data-name-en="Bookkeeping" data-deposit="150" onclick="toggleService(this)">
+            <div class="service-option-check"></div>
+            <div class="service-option-body">
+              <div class="service-option-name" data-lang="fr">Tenue de livres</div>
+              <div class="service-option-name" data-lang="en">Bookkeeping</div>
+              <div class="service-option-desc" data-lang="fr">Services mensuels · $300–$600/mois selon volume</div>
+              <div class="service-option-desc" data-lang="en">Monthly services · $300–$600/month based on volume</div>
+            </div>
+            <div class="service-option-deposit">$150 dépôt</div>
+          </div>
+
+          <div class="service-option" data-name-fr="Planification financière" data-name-en="Financial Planning" data-deposit="100" onclick="toggleService(this)">
+            <div class="service-option-check"></div>
+            <div class="service-option-body">
+              <div class="service-option-name" data-lang="fr">Planification financière</div>
+              <div class="service-option-name" data-lang="en">Financial Planning</div>
+              <div class="service-option-desc" data-lang="fr">Consultation individuelle · $150–$200/heure</div>
+              <div class="service-option-desc" data-lang="en">Individual consultation · $150–$200/hour</div>
+            </div>
+            <div class="service-option-deposit">$100 dépôt</div>
+          </div>
+
+        </div>
+
+        <!-- Summary -->
+        <div class="booking-summary">
+          <div class="booking-summary-title" data-lang="fr">Votre sélection</div>
+          <div class="booking-summary-title" data-lang="en">Your selection</div>
+
+          <div id="booking-lines">
+            <div class="booking-empty" data-lang="fr" id="empty-fr">Aucun service sélectionné</div>
+            <div class="booking-empty" data-lang="en" id="empty-en">No service selected</div>
+          </div>
+
+          <div class="booking-total">
+            <div class="booking-total-label" data-lang="fr">Dépôt total</div>
+            <div class="booking-total-label" data-lang="en">Total deposit</div>
+            <div class="booking-total-amount" id="booking-total">$0</div>
+          </div>
+
+          <p class="booking-note" data-lang="fr">Le dépôt est déduit du montant final. Le solde est facturé à la livraison.</p>
+          <p class="booking-note" data-lang="en">The deposit is deducted from the final amount. Balance invoiced upon delivery.</p>
+
+          <button class="btn-pay" id="open-payment-btn" disabled onclick="openModal()" data-lang="fr">Procéder au paiement</button>
+          <button class="btn-pay" id="open-payment-btn-en" disabled onclick="openModal()" data-lang="en">Proceed to payment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENT MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 class="modal-title" data-lang="fr">Confirmer le dépôt</h3>
+      <h3 class="modal-title" data-lang="en">Confirm deposit</h3>
+      <p class="modal-subtitle" data-lang="fr">Remplissez vos informations pour compléter le paiement.</p>
+      <p class="modal-subtitle" data-lang="en">Fill in your information to complete the payment.</p>
+
+      <div class="modal-summary" id="modal-summary"></div>
+
+      <div class="modal-field">
+        <label class="modal-label" data-lang="fr">Nom complet</label>
+        <label class="modal-label" data-lang="en">Full name</label>
+        <input class="modal-input" type="text" id="client-name" placeholder="Jean Tremblay" />
+      </div>
+      <div class="modal-field">
+        <label class="modal-label">Email</label>
+        <input class="modal-input" type="email" id="client-email" placeholder="jean@exemple.com" />
+      </div>
+      <div class="modal-field">
+        <label class="modal-label" data-lang="fr">Carte de crédit</label>
+        <label class="modal-label" data-lang="en">Credit card</label>
+        <div id="card-element"></div>
+      </div>
+
+      <div id="payment-message"></div>
+      <button id="pay-btn" onclick="submitPayment()" data-lang="fr">Payer le dépôt</button>
+      <button id="pay-btn-en" onclick="submitPayment()" data-lang="en" style="display:none;">Pay deposit</button>
+      <p class="modal-secure" data-lang="fr">🔒 Paiement sécurisé via Stripe</p>
+      <p class="modal-secure" data-lang="en">🔒 Secure payment via Stripe</p>
+    </div>
+  </div>
+
+  <!-- BILINGUAL BANNER -->
+  <div class="bilingual-banner">
+    <div class="bilingual-inner">
+      <p class="bilingual-text" data-lang="fr">Nous offrons nos services en <em>français et en anglais</em> —<br>pour toute la région de Gatineau-Ottawa.</p>
+      <p class="bilingual-text" data-lang="en">We serve clients in <em>French and English</em> —<br>across the Gatineau-Ottawa region.</p>
+      <p class="bilingual-note" data-lang="fr">Our services are fully available in English. Whether you're more comfortable in French or English, we adapt to you.</p>
+      <p class="bilingual-note" data-lang="en">Nos services sont entièrement disponibles en français. Nous nous adaptons à la langue de votre choix.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div>
+          <p class="section-eyebrow" data-lang="fr">Nous joindre</p>
+          <p class="section-eyebrow" data-lang="en">Contact</p>
+          <h2 class="section-title" data-lang="fr">Parlons de votre situation.</h2>
+          <h2 class="section-title" data-lang="en">Let's talk about your situation.</h2>
+          <p class="section-subtitle" style="margin-bottom: 40px;" data-lang="fr">Que vous ayez une question sur votre déclaration ou que vous cherchiez un comptable à long terme, n'hésitez pas à nous écrire.</p>
+          <p class="section-subtitle" style="margin-bottom: 40px;" data-lang="en">Whether you have a question about your return or are looking for a long-term accountant, feel free to reach out.</p>
+
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <p class="contact-label" data-lang="fr">Courriel</p>
+              <p class="contact-label" data-lang="en">Email</p>
+              <p class="contact-value"><a href="mailto:frederic@quanaccounting.com">frederic@quanaccounting.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <p class="contact-label" data-lang="fr">Emplacement</p>
+              <p class="contact-label" data-lang="en">Location</p>
+              <p class="contact-value" data-lang="fr">Gatineau, Québec<br>Région de la capitale nationale</p>
+              <p class="contact-value" data-lang="en">Gatineau, Québec<br>National Capital Region</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🌐</span>
+            <div>
+              <p class="contact-label" data-lang="fr">Langues</p>
+              <p class="contact-label" data-lang="en">Languages</p>
+              <p class="contact-value">Français · English</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="contact-form-note">
+            <p data-lang="fr">Pour nous joindre, envoyez-nous un courriel en décrivant brièvement votre situation — type de revenus, situation familiale, et toute particularité pertinente.</p>
+            <p data-lang="en">To get in touch, send us an email briefly describing your situation — type of income, family situation, and any relevant details.</p>
+            <p data-lang="fr">Nous vous répondrons dans les deux jours ouvrables pour discuter de la marche à suivre.</p>
+            <p data-lang="en">We'll respond within two business days to discuss next steps.</p>
+            <p style="margin-top: 20px;">
+              <a href="mailto:frederic@quanaccounting.com" class="btn-primary" data-lang="fr">Envoyer un courriel</a>
+              <a href="mailto:frederic@quanaccounting.com" class="btn-primary" data-lang="en">Send an email</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-logo"><span>Quan</span> Accounting</p>
+      <p class="footer-copy" data-lang="fr">© 2025 Quan Accounting. Frédéric Létourneau-Quan, CPA. Gatineau, Québec.</p>
+      <p class="footer-copy" data-lang="en">© 2025 Quan Accounting. Frédéric Létourneau-Quan, CPA. Gatineau, Québec.</p>
+    </div>
+  </footer>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    // ── Language toggle ──
+    function setLang(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+      updateSummary();
+    }
+
+    // ── Stripe setup ──
+    const stripe = Stripe('pk_test_51TgmbO9ttmw544mTmrAEcVbt22av6VWuJGBnfhbMzp2jQZLEiiHMGBe7grZ6lcWYm96EoulWd7tcENDgxXIxIe5300n6N5cQTz');
+    const elements = stripe.elements();
+    const cardElement = elements.create('card', {
+      style: {
+        base: { fontFamily: 'Outfit, sans-serif', fontSize: '14px', color: '#1a1a1a', '::placeholder': { color: '#aaa' } }
+      }
+    });
+    cardElement.mount('#card-element');
+
+    // ── Booking logic ──
+    let selectedServices = [];
+
+    function toggleService(el) {
+      const name_fr = el.dataset.nameFr;
+      const name_en = el.dataset.nameEn;
+      const deposit = parseInt(el.dataset.deposit);
+      const idx = selectedServices.findIndex(s => s.name_fr === name_fr);
+
+      if (idx > -1) {
+        selectedServices.splice(idx, 1);
+        el.classList.remove('selected');
+      } else {
+        selectedServices.push({ name_fr, name_en, deposit });
+        el.classList.add('selected');
+      }
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const isEn = document.body.classList.contains('lang-en');
+      const linesEl = document.getElementById('booking-lines');
+      const totalEl = document.getElementById('booking-total');
+      const payBtn = document.getElementById('open-payment-btn');
+      const payBtnEn = document.getElementById('open-payment-btn-en');
+
+      // Clear lines (keep empty messages)
+      const existing = linesEl.querySelectorAll('.booking-line');
+      existing.forEach(e => e.remove());
+
+      const emptyFr = document.getElementById('empty-fr');
+      const emptyEn = document.getElementById('empty-en');
+
+      if (selectedServices.length === 0) {
+        emptyFr.style.display = '';
+        emptyEn.style.display = '';
+        totalEl.textContent = '$0';
+        payBtn.disabled = true;
+        payBtnEn.disabled = true;
+        return;
+      }
+
+      emptyFr.style.display = 'none';
+      emptyEn.style.display = 'none';
+
+      let total = 0;
+      selectedServices.forEach(s => {
+        total += s.deposit;
+        const line = document.createElement('div');
+        line.className = 'booking-line';
+        line.innerHTML = `<span class="booking-line-name">${isEn ? s.name_en : s.name_fr}</span><span class="booking-line-price">$${s.deposit}</span>`;
+        linesEl.appendChild(line);
+      });
+
+      totalEl.textContent = '$' + total;
+      payBtn.disabled = false;
+      payBtnEn.disabled = false;
+    }
+
+    // ── Modal ──
+    function openModal() {
+      const isEn = document.body.classList.contains('lang-en');
+      const total = selectedServices.reduce((sum, s) => sum + s.deposit, 0);
+      const names = selectedServices.map(s => isEn ? s.name_en : s.name_fr).join(', ');
+      const summaryEl = document.getElementById('modal-summary');
+      summaryEl.innerHTML = isEn
+        ? `Services: <strong>${names}</strong><br>Deposit due today: <strong>$${total} CAD</strong>`
+        : `Services: <strong>${names}</strong><br>Dépôt dû aujourd'hui: <strong>${total} $ CAD</strong>`;
+
+      // Fix pay button display for current language
+      const payBtn = document.getElementById('pay-btn');
+      const payBtnEn = document.getElementById('pay-btn-en');
+      if (isEn) { payBtn.style.display = 'none'; payBtnEn.style.display = 'block'; }
+      else { payBtn.style.display = 'block'; payBtnEn.style.display = 'none'; }
+
+      document.getElementById('modal-overlay').classList.add('open');
+      document.getElementById('payment-message').textContent = '';
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('open');
+    }
+
+    // Close modal on overlay click
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // ── Payment submission ──
+    async function submitPayment() {
+      const isEn = document.body.classList.contains('lang-en');
+      const name = document.getElementById('client-name').value.trim();
+      const email = document.getElementById('client-email').value.trim();
+      const msgEl = document.getElementById('payment-message');
+
+      if (!name || !email) {
+        msgEl.textContent = isEn ? 'Please fill in your name and email.' : 'Veuillez remplir votre nom et courriel.';
+        return;
+      }
+
+      const payBtn = document.getElementById(isEn ? 'pay-btn-en' : 'pay-btn');
+      payBtn.disabled = true;
+      payBtn.textContent = isEn ? 'Processing...' : 'Traitement...';
+      msgEl.textContent = '';
+
+      const total = selectedServices.reduce((sum, s) => sum + s.deposit, 0);
+      const serviceNames = selectedServices.map(s => isEn ? s.name_en : s.name_fr).join(', ');
+
+      // Create PaymentIntent via Stripe (test mode — needs backend for production)
+      // For now, tokenize the card and show confirmation
+      const { paymentMethod, error } = await stripe.createPaymentMethod({
+        type: 'card',
+        card: cardElement,
+        billing_details: { name, email }
+      });
+
+      if (error) {
+        msgEl.textContent = error.message;
+        payBtn.disabled = false;
+        payBtn.textContent = isEn ? 'Pay deposit' : 'Payer le dépôt';
+        return;
+      }
+
+      // Success state (test mode)
+      document.querySelector('.modal').innerHTML = `
+        <div style="text-align:center; padding: 20px 0;">
+          <div style="font-size:48px; margin-bottom:16px;">✅</div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:24px; color:var(--navy); margin-bottom:8px;">${isEn ? 'Deposit confirmed!' : 'Dépôt confirmé!'}</h3>
+          <p style="font-size:14px; color:var(--text-mid); margin-bottom:6px;">${isEn ? 'Services' : 'Services'}: <strong>${serviceNames}</strong></p>
+          <p style="font-size:14px; color:var(--text-mid); margin-bottom:20px;">${isEn ? 'Amount' : 'Montant'}: <strong>$${total} CAD</strong></p>
+          <p style="font-size:13px; color:var(--text-light); margin-bottom:24px;">${isEn ? 'A confirmation will be sent to ' : 'Une confirmation sera envoyée à '}<strong>${email}</strong>.</p>
+          <button onclick="closeModal(); location.reload();" style="background:var(--navy);color:white;border:none;padding:12px 28px;border-radius:4px;font-size:13px;cursor:pointer;font-family:'Outfit',sans-serif;">${isEn ? 'Close' : 'Fermer'}</button>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
