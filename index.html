@@ -69,9 +69,10 @@
     }
 
     /* Hide/show language content */
-    [data-lang="en"] { display: none; }
-    body.lang-en [data-lang="fr"] { display: none; }
-    body.lang-en [data-lang="en"] { display: revert; }
+    [data-lang="en"] { display: none !important; }
+    body.lang-en [data-lang="fr"] { display: none !important; }
+    body.lang-en [data-lang="en"] { display: revert !important; }
+    body.lang-en a[data-lang="en"], body.lang-en button[data-lang="en"] { display: inline-block !important; }
 
     /* ── NAVIGATION ── */
     nav {
@@ -1135,6 +1136,8 @@
           <span class="service-detail" data-lang="en">Individuals · Families · Business owners</span>
         </div>
       </div>
+      <p style="text-align:center;margin-top:32px;font-size:14px;color:var(--text-light);" data-lang="fr">Vous n'êtes pas certain du service dont vous avez besoin&nbsp;? Écrivez-moi à <a href="mailto:frederic@quanaccounting.com" style="color:var(--navy);text-decoration:underline;">frederic@quanaccounting.com</a> et je vous guiderai.</p>
+      <p style="text-align:center;margin-top:32px;font-size:14px;color:var(--text-light);" data-lang="en">Not sure which service you need? Reach out at <a href="mailto:frederic@quanaccounting.com" style="color:var(--navy);text-decoration:underline;">frederic@quanaccounting.com</a> and I'll point you in the right direction.</p>
     </div>
   </section>
 
@@ -1307,9 +1310,9 @@
             <div class="stat-label" data-lang="en">Languages of service</div>
           </div>
           <div class="stat-cell">
-            <div class="stat-number">QC</div>
-            <div class="stat-label" data-lang="fr">&amp; Ontario — couverture biprovinciale</div>
-            <div class="stat-label" data-lang="en">&amp; Ontario — cross-provincial coverage</div>
+            <div class="stat-number">QC <span style="font-size:28px;opacity:0.5">&amp;</span> ON</div>
+            <div class="stat-label" data-lang="fr">Couverture biprovinciale</div>
+            <div class="stat-label" data-lang="en">Cross-provincial coverage</div>
           </div>
           <div class="stat-cell">
             <div class="stat-number">CPA</div>
@@ -1416,6 +1419,18 @@
             <div class="service-option-deposit">$100 dépôt</div>
           </div>
 
+          <a href="mailto:frederic@quanaccounting.com?subject=Autres%20services%20comptables" class="service-option" style="text-decoration:none;">
+            <div class="service-option-check" style="border-color:var(--gold); background: rgba(184,146,42,0.15);">✉</div>
+            <div class="service-option-body">
+              <div class="service-option-name" data-lang="fr">Autres services comptables</div>
+              <div class="service-option-name" data-lang="en">Other accounting services</div>
+              <div class="service-option-desc" data-lang="fr">Vous ne trouvez pas ce que vous cherchez ? Contactez-moi pour discuter de vos besoins.</div>
+              <div class="service-option-desc" data-lang="en">Don't see what you're looking for? Reach out to discuss your needs.</div>
+            </div>
+            <div class="service-option-deposit" data-lang="fr">Nous contacter</div>
+            <div class="service-option-deposit" data-lang="en">Contact us</div>
+          </a>
+
         </div>
 
         <!-- Summary -->
@@ -1483,8 +1498,8 @@
     <div class="bilingual-inner">
       <p class="bilingual-text" data-lang="fr">Nous offrons nos services en <em>français et en anglais</em> —<br>pour toute la région de Gatineau-Ottawa.</p>
       <p class="bilingual-text" data-lang="en">We serve clients in <em>French and English</em> —<br>across the Gatineau-Ottawa region.</p>
-      <p class="bilingual-note" data-lang="fr">Nos services sont entièrement disponibles en anglais. Nous nous adaptons à la langue de votre choix.</p>
-      <p class="bilingual-note" data-lang="en">Nos services sont entièrement disponibles en français. Nous nous adaptons à la langue de votre choix.</p>
+      <p class="bilingual-note" data-lang="fr">Nos services sont offerts en français et en anglais. Nous nous adaptons à la langue de votre choix.</p>
+      <p class="bilingual-note" data-lang="en">Our services are available in both French and English. We adapt to the language of your choice.</p>
     </div>
   </div>
 
