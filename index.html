@@ -34,7 +34,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── LANGUAGE TOGGLE ── */
     .lang-toggle {
       display: flex;
       align-items: center;
@@ -59,22 +58,14 @@
       color: rgba(255,255,255,0.5);
     }
 
-    .lang-btn.active {
-      background: var(--gold);
-      color: var(--navy-deep);
-    }
+    .lang-btn.active { background: var(--gold); color: var(--navy-deep); }
+    .lang-btn:hover:not(.active) { color: rgba(255,255,255,0.9); }
 
-    .lang-btn:hover:not(.active) {
-      color: rgba(255,255,255,0.9);
-    }
-
-    /* Hide/show language content */
     [data-lang="en"] { display: none !important; }
     body.lang-en [data-lang="fr"] { display: none !important; }
     body.lang-en [data-lang="en"] { display: revert !important; }
     body.lang-en a[data-lang="en"], body.lang-en button[data-lang="en"] { display: inline-block !important; }
 
-    /* ── NAVIGATION ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -89,12 +80,7 @@
       border-bottom: 1px solid rgba(184,146,42,0.2);
     }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 
     .nav-monogram {
       width: 38px; height: 38px;
@@ -118,11 +104,7 @@
       letter-spacing: 0.3px;
     }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
 
     .nav-links {
       display: flex;
@@ -152,12 +134,8 @@
       transition: background 0.2s, color 0.2s !important;
     }
 
-    .nav-cta:hover {
-      background: var(--gold) !important;
-      color: var(--navy-deep) !important;
-    }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--navy-deep) !important; }
 
-    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       background: var(--navy-deep);
@@ -206,10 +184,7 @@
       margin-bottom: 24px;
     }
 
-    .hero-title em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
 
     .hero-body {
       font-size: 15px;
@@ -220,11 +195,7 @@
       max-width: 420px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
     .btn-primary {
       background: var(--gold);
@@ -256,10 +227,7 @@
       transition: border-color 0.2s, color 0.2s;
     }
 
-    .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.5);
-      color: white;
-    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.5); color: white; }
 
     .hero-card {
       background: rgba(255,255,255,0.04);
@@ -286,11 +254,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .credential-item:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
+    .credential-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
 
     .credential-dot {
       width: 6px; height: 6px;
@@ -314,13 +278,9 @@
       margin-bottom: 2px;
     }
 
-    /* ── SECTIONS COMMON ── */
     section { padding: 96px 5vw; }
 
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
 
     .section-eyebrow {
       font-size: 11px;
@@ -350,7 +310,6 @@
 
     .section-header { margin-bottom: 56px; }
 
-    /* ── SERVICES ── */
     #services { background: var(--warm-white); }
 
     .services-grid {
@@ -363,12 +322,7 @@
       overflow: hidden;
     }
 
-    .service-card {
-      background: var(--warm-white);
-      padding: 40px 36px;
-      transition: background 0.2s;
-    }
-
+    .service-card { background: var(--warm-white); padding: 40px 36px; transition: background 0.2s; }
     .service-card:hover { background: #FDFBF7; }
 
     .service-icon { font-size: 22px; margin-bottom: 20px; }
@@ -381,45 +335,16 @@
       margin-bottom: 12px;
     }
 
-    .service-desc {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
+    .service-desc { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
+    .service-detail { font-size: 12px; font-weight: 400; color: var(--gold); letter-spacing: 0.5px; }
 
-    .service-detail {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--gold);
-      letter-spacing: 0.5px;
-    }
-
-    /* ── ABOUT ── */
     #about { background: var(--cream); }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 80px;
-      align-items: start;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start; }
 
-    .about-body {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
+    .about-body { font-size: 15px; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px; }
 
-    .about-rule {
-      width: 48px;
-      height: 2px;
-      background: var(--gold);
-      margin-bottom: 28px;
-    }
+    .about-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 28px; }
 
     .stats-grid {
       display: grid;
@@ -431,10 +356,7 @@
       overflow: hidden;
     }
 
-    .stat-cell {
-      background: var(--warm-white);
-      padding: 28px 24px;
-    }
+    .stat-cell { background: var(--warm-white); padding: 28px 24px; }
 
     .stat-number {
       font-family: 'Cormorant Garamond', serif;
@@ -445,18 +367,9 @@
       margin-bottom: 6px;
     }
 
-    .stat-label {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--text-light);
-      letter-spacing: 0.5px;
-    }
+    .stat-label { font-size: 12px; font-weight: 400; color: var(--text-light); letter-spacing: 0.5px; }
 
-    /* ── BILINGUAL BANNER ── */
-    .bilingual-banner {
-      background: var(--navy);
-      padding: 56px 5vw;
-    }
+    .bilingual-banner { background: var(--navy); padding: 56px 5vw; }
 
     .bilingual-inner {
       max-width: 1100px;
@@ -486,22 +399,11 @@
       line-height: 1.6;
     }
 
-    /* ── CONTACT ── */
     #contact { background: var(--warm-white); }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 
-    .contact-item {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 28px;
-      align-items: flex-start;
-    }
+    .contact-item { display: flex; gap: 16px; margin-bottom: 28px; align-items: flex-start; }
 
     .contact-icon { font-size: 16px; margin-top: 2px; flex-shrink: 0; }
 
@@ -514,13 +416,7 @@
       margin-bottom: 4px;
     }
 
-    .contact-value {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.6;
-    }
-
+    .contact-value { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
     .contact-value a { color: var(--navy); text-decoration: none; font-weight: 400; }
     .contact-value a:hover { color: var(--gold); }
 
@@ -541,7 +437,6 @@
 
     .contact-form-note p:last-child { margin-bottom: 0; }
 
-    /* ── FOOTER ── */
     footer { background: var(--navy-deep); padding: 40px 5vw; }
 
     .footer-inner {
@@ -554,22 +449,10 @@
       flex-wrap: wrap;
     }
 
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.6);
-    }
-
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 500; color: rgba(255,255,255,0.6); }
     .footer-logo span { color: var(--gold); }
+    .footer-copy { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.35); }
 
-    .footer-copy {
-      font-size: 12px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.35);
-    }
-
-    /* ── PRICING ── */
     #pricing { background: var(--cream); }
 
     .pricing-intro {
@@ -585,23 +468,11 @@
       border-radius: 0 4px 4px 0;
     }
 
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
-    .pricing-card {
-      background: var(--warm-white);
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      overflow: hidden;
-    }
+    .pricing-card { background: var(--warm-white); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
 
-    .pricing-card-header {
-      background: var(--navy);
-      padding: 24px 28px;
-    }
+    .pricing-card-header { background: var(--navy); padding: 24px 28px; }
 
     .pricing-card-icon { font-size: 18px; margin-bottom: 10px; }
 
@@ -634,19 +505,8 @@
 
     .pricing-tier:last-child { border-bottom: none; }
 
-    .pricing-tier-label {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--text);
-      flex: 1;
-    }
-
-    .pricing-tier-detail {
-      font-size: 11px;
-      font-weight: 300;
-      color: var(--text-light);
-      margin-top: 2px;
-    }
+    .pricing-tier-label { font-size: 13px; font-weight: 400; color: var(--text); flex: 1; }
+    .pricing-tier-detail { font-size: 11px; font-weight: 300; color: var(--text-light); margin-top: 2px; }
 
     .pricing-tier-price {
       font-family: 'Cormorant Garamond', serif;
@@ -670,19 +530,13 @@
 
     .pricing-wide { grid-column: 1 / -1; }
 
-    /* ── BOOKING ── */
     #booking { background: var(--navy-deep); }
 
     #booking .section-eyebrow { color: var(--gold); }
     #booking .section-title { color: var(--warm-white); }
     #booking .section-subtitle { color: rgba(255,255,255,0.55); }
 
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 
     .service-selector { display: flex; flex-direction: column; gap: 12px; }
 
@@ -698,15 +552,8 @@
       gap: 14px;
     }
 
-    .service-option:hover {
-      border-color: rgba(184,146,42,0.4);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .service-option.selected {
-      border-color: var(--gold);
-      background: rgba(184,146,42,0.08);
-    }
+    .service-option:hover { border-color: rgba(184,146,42,0.4); background: rgba(255,255,255,0.06); }
+    .service-option.selected { border-color: var(--gold); background: rgba(184,146,42,0.08); }
 
     .service-option-check {
       width: 20px; height: 20px;
@@ -720,10 +567,7 @@
       transition: border-color 0.2s, background 0.2s;
     }
 
-    .service-option.selected .service-option-check {
-      border-color: var(--gold);
-      background: var(--gold);
-    }
+    .service-option.selected .service-option-check { border-color: var(--gold); background: var(--gold); }
 
     .service-option-check::after {
       content: '';
@@ -737,27 +581,9 @@
 
     .service-option-body { flex: 1; }
 
-    .service-option-name {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--warm-white);
-      margin-bottom: 3px;
-    }
-
-    .service-option-desc {
-      font-size: 12px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.5;
-    }
-
-    .service-option-deposit {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--gold);
-      white-space: nowrap;
-      margin-top: 2px;
-    }
+    .service-option-name { font-size: 14px; font-weight: 500; color: var(--warm-white); margin-bottom: 3px; }
+    .service-option-desc { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.5; }
+    .service-option-deposit { font-size: 12px; font-weight: 600; color: var(--gold); white-space: nowrap; margin-top: 2px; }
 
     .booking-summary {
       background: rgba(255,255,255,0.04);
@@ -796,18 +622,8 @@
       gap: 12px;
     }
 
-    .booking-line-name {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.7);
-      flex: 1;
-    }
-
-    .booking-line-price {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--gold-light);
-    }
+    .booking-line-name { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.7); flex: 1; }
+    .booking-line-price { font-size: 13px; font-weight: 500; color: var(--gold-light); }
 
     .booking-total {
       display: flex;
@@ -858,147 +674,245 @@
     }
 
     .btn-pay:hover { background: var(--gold-light); }
-    .btn-pay:disabled {
-      background: rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.3);
-      cursor: not-allowed;
-    }
+    .btn-pay:disabled { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); cursor: not-allowed; }
 
-    /* Payment modal */
+    /* ── T1 QUESTIONNAIRE MODAL ── */
     .modal-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
       z-index: 200;
       align-items: center;
       justify-content: center;
+      padding: 20px;
     }
 
     .modal-overlay.open { display: flex; }
 
-    .modal {
+    .t1-modal-box {
       background: var(--warm-white);
       border-radius: 10px;
-      padding: 40px;
       width: 100%;
-      max-width: 480px;
-      margin: 20px;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
       position: relative;
     }
 
-    .modal-close {
+    .t1-modal-header {
+      background: var(--navy);
+      padding: 28px 32px 24px;
+      border-radius: 10px 10px 0 0;
+      position: relative;
+    }
+
+    .t1-modal-close {
       position: absolute;
       top: 16px; right: 20px;
-      font-size: 20px;
+      font-size: 18px;
       background: none;
       border: none;
       cursor: pointer;
-      color: var(--text-light);
+      color: rgba(255,255,255,0.5);
       line-height: 1;
+      transition: color 0.2s;
     }
 
-    .modal-title {
+    .t1-modal-close:hover { color: white; }
+
+    .t1-modal-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 500;
-      color: var(--navy);
-      margin-bottom: 6px;
+      color: var(--warm-white);
+      margin-bottom: 4px;
     }
 
-    .modal-subtitle {
+    .t1-modal-subtitle {
       font-size: 13px;
       font-weight: 300;
-      color: var(--text-mid);
-      margin-bottom: 28px;
+      color: rgba(255,255,255,0.55);
     }
 
-    .modal-field { margin-bottom: 16px; }
+    .t1-modal-body { padding: 28px 32px 32px; }
 
-    .modal-label {
-      display: block;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      margin-bottom: 6px;
-    }
+    .q-step { display: none; }
+    .q-step.active { display: block; }
 
-    .modal-input {
-      width: 100%;
-      padding: 11px 14px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 14px;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .modal-input:focus { border-color: var(--navy); }
-
-    #card-element {
-      padding: 11px 14px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      transition: border-color 0.2s;
-    }
-
-    #card-element.StripeElement--focus { border-color: var(--navy); }
-
-    .modal-summary {
-      background: var(--cream);
-      border-radius: 4px;
-      padding: 14px 16px;
-      margin-bottom: 20px;
+    .q-instruction {
       font-size: 13px;
+      font-weight: 400;
       color: var(--text-mid);
+      margin-bottom: 18px;
       line-height: 1.6;
     }
 
-    .modal-summary strong { color: var(--navy); font-weight: 600; }
+    .q-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
 
-    #pay-btn {
-      width: 100%;
-      background: var(--navy);
-      color: white;
+    .q-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1.5px solid #e8e2d6;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      background: #FDFBF7;
+    }
+
+    .q-option:hover { border-color: var(--gold); background: rgba(184,146,42,0.04); }
+    .q-option.checked { border-color: var(--navy); background: rgba(27,58,92,0.05); }
+
+    .q-checkbox {
+      width: 18px; height: 18px;
+      border: 1.5px solid #ccc;
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .q-option.checked .q-checkbox { border-color: var(--navy); background: var(--navy); }
+
+    .q-checkbox-tick { color: white; font-size: 11px; display: none; }
+    .q-option.checked .q-checkbox-tick { display: block; }
+
+    .q-option-label { font-size: 14px; font-weight: 400; color: var(--text); line-height: 1.4; }
+    .q-option-detail { font-size: 12px; font-weight: 300; color: var(--text-light); margin-top: 2px; }
+
+    .q-btn-row { display: flex; gap: 12px; justify-content: flex-end; }
+
+    .q-btn {
+      font-family: 'Outfit', sans-serif;
       font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .q-btn-primary { background: var(--navy); color: white; }
+    .q-btn-primary:hover { background: var(--navy-deep); }
+    .q-btn-secondary { background: transparent; color: var(--text-mid); border: 1px solid #ddd; }
+    .q-btn-secondary:hover { border-color: #aaa; }
+
+    .q-result { text-align: center; padding: 8px 0 16px; }
+
+    .q-result-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .badge-simple { background: rgba(27,58,92,0.1); color: var(--navy); }
+    .badge-standard { background: rgba(184,146,42,0.15); color: #8a6a10; }
+    .badge-complex { background: rgba(180,60,60,0.1); color: #8a2020; }
+
+    .q-result-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .q-result-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 8px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .q-result-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .q-result-reasons {
+      background: var(--cream);
+      border-radius: 6px;
+      padding: 14px 18px;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .q-result-reasons-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .q-result-reason-item {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      padding: 4px 0;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .q-result-reason-item::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+
+    .q-stripe-btn {
+      display: block;
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.6px;
       text-transform: uppercase;
       padding: 16px;
       border-radius: 4px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+      margin-bottom: 12px;
+    }
+
+    .q-stripe-btn:hover { background: var(--gold-light); }
+
+    .q-restart {
+      font-size: 12px;
+      color: var(--text-light);
+      background: none;
       border: none;
       cursor: pointer;
-      transition: background 0.2s;
-      margin-top: 8px;
+      text-decoration: underline;
+      font-family: 'Outfit', sans-serif;
     }
 
-    #pay-btn:hover { background: var(--navy-deep); }
-    #pay-btn:disabled { background: #aaa; cursor: not-allowed; }
+    .q-restart:hover { color: var(--navy); }
+    .q-divider { height: 1px; background: #eee; margin: 20px 0; }
 
-    #payment-message {
-      font-size: 13px;
-      color: #c0392b;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    .modal-secure {
-      font-size: 11px;
-      color: var(--text-light);
-      text-align: center;
-      margin-top: 12px;
-    }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .hero-inner, .about-grid, .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
+      .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .services-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -1010,6 +924,8 @@
     @media (max-width: 560px) {
       .hero-actions { flex-direction: column; }
       .stats-grid { grid-template-columns: 1fr; }
+      .t1-modal-body { padding: 20px; }
+      .t1-modal-header { padding: 20px; }
     }
   </style>
 </head>
@@ -1158,8 +1074,6 @@
       </div>
 
       <div class="pricing-grid">
-
-        <!-- T1 Personal Tax -->
         <div class="pricing-card">
           <div class="pricing-card-header">
             <div class="pricing-card-icon">📋</div>
@@ -1199,7 +1113,6 @@
           </div>
         </div>
 
-        <!-- T2 Corporate Tax -->
         <div class="pricing-card pricing-wide">
           <div class="pricing-card-header">
             <div class="pricing-card-icon">🏢</div>
@@ -1232,9 +1145,7 @@
           </div>
         </div>
 
-        <!-- Bookkeeping + Planning -->
         <div>
-          <!-- Bookkeeping -->
           <div class="pricing-card" style="margin-bottom: 24px;">
             <div class="pricing-card-header">
               <div class="pricing-card-icon">📒</div>
@@ -1256,7 +1167,6 @@
             </div>
           </div>
 
-          <!-- Financial Planning -->
           <div class="pricing-card">
             <div class="pricing-card-header">
               <div class="pricing-card-icon">📈</div>
@@ -1278,7 +1188,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1337,44 +1246,23 @@
       </div>
 
       <div class="booking-grid">
-        <!-- Service selector -->
         <div class="service-selector" id="service-selector">
 
-          <div class="service-option" data-name-fr="Impôt T1 — Simple" data-name-en="T1 Tax — Simple" data-deposit="100" onclick="toggleService(this)">
-            <div class="service-option-check"></div>
+          <!-- T1 — opens questionnaire -->
+          <div class="service-option" onclick="openT1Questionnaire()">
+            <div class="service-option-check" style="border-color:var(--gold); background:rgba(184,146,42,0.15); font-size:12px; color:var(--gold); border-radius:4px;">📋</div>
             <div class="service-option-body">
-              <div class="service-option-name" data-lang="fr">Impôt T1 — Simple</div>
-              <div class="service-option-name" data-lang="en">T1 Tax — Simple</div>
-              <div class="service-option-desc" data-lang="fr">1–2 feuillets, aucune annexe complexe · Frais estimés $225–$325</div>
-              <div class="service-option-desc" data-lang="en">1–2 slips, no complex schedules · Estimated $225–$325</div>
+              <div class="service-option-name" data-lang="fr">Impôt personnel T1</div>
+              <div class="service-option-name" data-lang="en">Personal Tax (T1)</div>
+              <div class="service-option-desc" data-lang="fr">Simple · Standard · Complexe — répondez à quelques questions pour identifier la bonne catégorie et payer en ligne</div>
+              <div class="service-option-desc" data-lang="en">Simple · Standard · Complex — answer a few questions to find the right category and pay online</div>
             </div>
-            <div class="service-option-deposit">$100 dépôt</div>
-          </div>
-
-          <div class="service-option" data-name-fr="Impôt T1 — Standard" data-name-en="T1 Tax — Standard" data-deposit="150" onclick="toggleService(this)">
-            <div class="service-option-check"></div>
-            <div class="service-option-body">
-              <div class="service-option-name" data-lang="fr">Impôt T1 — Standard</div>
-              <div class="service-option-name" data-lang="en">T1 Tax — Standard</div>
-              <div class="service-option-desc" data-lang="fr">Plusieurs feuillets, REER, dons, médical · Frais estimés $350–$500</div>
-              <div class="service-option-desc" data-lang="en">Multiple slips, RRSP, donations, medical · Estimated $350–$500</div>
-            </div>
-            <div class="service-option-deposit">$150 dépôt</div>
-          </div>
-
-          <div class="service-option" data-name-fr="Impôt T1 — Complexe" data-name-en="T1 Tax — Complex" data-deposit="200" onclick="toggleService(this)">
-            <div class="service-option-check"></div>
-            <div class="service-option-body">
-              <div class="service-option-name" data-lang="fr">Impôt T1 — Complexe</div>
-              <div class="service-option-name" data-lang="en">T1 Tax — Complex</div>
-              <div class="service-option-desc" data-lang="fr">Revenu locatif, travail autonome et situations particulières · Frais estimés $500–$900+</div>
-              <div class="service-option-desc" data-lang="en">Rental income, self-employment and other complex situations · Estimated $500–$900+</div>
-            </div>
-            <div class="service-option-deposit">$200 dépôt</div>
+            <div class="service-option-deposit" data-lang="fr">Identifier ma catégorie →</div>
+            <div class="service-option-deposit" data-lang="en">Find my category →</div>
           </div>
 
           <a href="mailto:frederic@quanaccounting.com?subject=T2%20-%20SPCC%20Simple" class="service-option" style="text-decoration:none;">
-            <div class="service-option-check" style="border-color:var(--gold); background: rgba(184,146,42,0.15);">✉</div>
+            <div class="service-option-check" style="border-color:var(--gold); background:rgba(184,146,42,0.15);">✉</div>
             <div class="service-option-body">
               <div class="service-option-name" data-lang="fr">Impôt T2 — SPCC Simple</div>
               <div class="service-option-name" data-lang="en">T2 Tax — Simple CCPC</div>
@@ -1386,7 +1274,7 @@
           </a>
 
           <a href="mailto:frederic@quanaccounting.com?subject=T2%20-%20SPCC%20Complexe" class="service-option" style="text-decoration:none;">
-            <div class="service-option-check" style="border-color:var(--gold); background: rgba(184,146,42,0.15);">✉</div>
+            <div class="service-option-check" style="border-color:var(--gold); background:rgba(184,146,42,0.15);">✉</div>
             <div class="service-option-body">
               <div class="service-option-name" data-lang="fr">Impôt T2 — SPCC Complexe</div>
               <div class="service-option-name" data-lang="en">T2 Tax — Complex CCPC</div>
@@ -1420,7 +1308,7 @@
           </div>
 
           <a href="mailto:frederic@quanaccounting.com?subject=Autres%20services%20comptables" class="service-option" style="text-decoration:none;">
-            <div class="service-option-check" style="border-color:var(--gold); background: rgba(184,146,42,0.15);">✉</div>
+            <div class="service-option-check" style="border-color:var(--gold); background:rgba(184,146,42,0.15);">✉</div>
             <div class="service-option-body">
               <div class="service-option-name" data-lang="fr">Autres services comptables</div>
               <div class="service-option-name" data-lang="en">Other accounting services</div>
@@ -1452,44 +1340,122 @@
           <p class="booking-note" data-lang="fr">Le dépôt est déduit du montant final. Le solde est facturé à la remise des travaux.</p>
           <p class="booking-note" data-lang="en">The deposit is deducted from the final amount. Balance invoiced upon delivery.</p>
 
-          <button class="btn-pay" id="open-payment-btn" disabled onclick="openModal()" data-lang="fr">Procéder au paiement</button>
-          <button class="btn-pay" id="open-payment-btn-en" disabled onclick="openModal()" data-lang="en">Proceed to payment</button>
+          <button class="btn-pay" id="open-payment-btn" disabled onclick="openPaymentModal()" data-lang="fr">Procéder au paiement</button>
+          <button class="btn-pay" id="open-payment-btn-en" disabled onclick="openPaymentModal()" data-lang="en">Proceed to payment</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PAYMENT MODAL -->
-  <div class="modal-overlay" id="modal-overlay">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <h3 class="modal-title" data-lang="fr">Confirmer le dépôt</h3>
-      <h3 class="modal-title" data-lang="en">Confirm deposit</h3>
-      <p class="modal-subtitle" data-lang="fr">Remplissez vos informations pour compléter le paiement.</p>
-      <p class="modal-subtitle" data-lang="en">Fill in your information to complete the payment.</p>
-
-      <div class="modal-summary" id="modal-summary"></div>
-
-      <div class="modal-field">
-        <label class="modal-label" data-lang="fr">Nom complet</label>
-        <label class="modal-label" data-lang="en">Full name</label>
-        <input class="modal-input" type="text" id="client-name" placeholder="Jean Tremblay" />
+  <!-- T1 QUESTIONNAIRE MODAL -->
+  <div class="modal-overlay" id="t1-modal">
+    <div class="t1-modal-box">
+      <div class="t1-modal-header">
+        <button class="t1-modal-close" onclick="closeT1Modal()">✕</button>
+        <p class="t1-modal-title" data-lang="fr">Quel type de déclaration T1 vous correspond?</p>
+        <p class="t1-modal-title" data-lang="en">Which T1 category applies to you?</p>
+        <p class="t1-modal-subtitle" data-lang="fr">Cochez toutes les situations qui s'appliquent à votre déclaration.</p>
+        <p class="t1-modal-subtitle" data-lang="en">Check all situations that apply to your return.</p>
       </div>
-      <div class="modal-field">
-        <label class="modal-label">Email</label>
-        <input class="modal-input" type="email" id="client-email" placeholder="jean@exemple.com" />
-      </div>
-      <div class="modal-field">
-        <label class="modal-label" data-lang="fr">Carte de crédit</label>
-        <label class="modal-label" data-lang="en">Credit card</label>
-        <div id="card-element"></div>
-      </div>
+      <div class="t1-modal-body">
 
-      <div id="payment-message"></div>
-      <button id="pay-btn" onclick="submitPayment()" data-lang="fr">Payer le dépôt</button>
-      <button id="pay-btn-en" onclick="submitPayment()" data-lang="en" style="display:none;">Pay deposit</button>
-      <p class="modal-secure" data-lang="fr">🔒 Paiement sécurisé via Stripe</p>
-      <p class="modal-secure" data-lang="en">🔒 Secure payment via Stripe</p>
+        <!-- Step 1: Questions -->
+        <div class="q-step active" id="q-step-1">
+          <p class="q-instruction" data-lang="fr">Sélectionnez tous les types de revenus ou déductions qui figurent dans votre dossier :</p>
+          <p class="q-instruction" data-lang="en">Select all types of income or deductions that apply to your file:</p>
+
+          <div class="q-options">
+
+            <div class="q-option" data-weight="0" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Revenus d'emploi seulement (T4)</div>
+                <div class="q-option-label" data-lang="en">Employment income only (T4)</div>
+                <div class="q-option-detail" data-lang="fr">Un ou deux employeurs, situation sans complexité particulière</div>
+                <div class="q-option-detail" data-lang="en">One or two employers, straightforward situation</div>
+              </div>
+            </div>
+
+            <div class="q-option" data-weight="1" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Cotisations REER / retraits REER ou FERR</div>
+                <div class="q-option-label" data-lang="en">RRSP contributions / RRSP or RRIF withdrawals</div>
+              </div>
+            </div>
+
+            <div class="q-option" data-weight="1" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Dons de bienfaisance, frais médicaux ou frais de scolarité</div>
+                <div class="q-option-label" data-lang="en">Charitable donations, medical expenses, or tuition</div>
+              </div>
+            </div>
+
+            <div class="q-option" data-weight="1" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Revenus de placement (dividendes, intérêts, gains en capital)</div>
+                <div class="q-option-label" data-lang="en">Investment income (dividends, interest, capital gains)</div>
+              </div>
+            </div>
+
+            <div class="q-option" data-weight="1" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Revenus de retraite, pension alimentaire ou prestations gouvernementales</div>
+                <div class="q-option-label" data-lang="en">Pension income, alimony, or government benefits</div>
+              </div>
+            </div>
+
+            <div class="q-option" data-weight="2" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Revenus locatifs (logement, chalet, Airbnb)</div>
+                <div class="q-option-label" data-lang="en">Rental income (residential, cottage, Airbnb)</div>
+              </div>
+            </div>
+
+            <div class="q-option" data-weight="2" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Travail autonome ou revenus d'entreprise</div>
+                <div class="q-option-label" data-lang="en">Self-employment or business income</div>
+              </div>
+            </div>
+
+            <div class="q-option" data-weight="2" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Situation multiprovinciale ou revenus étrangers</div>
+                <div class="q-option-label" data-lang="en">Multi-provincial situation or foreign income</div>
+              </div>
+            </div>
+
+            <div class="q-option" data-weight="2" onclick="toggleQOption(this)">
+              <div class="q-checkbox"><span class="q-checkbox-tick">✓</span></div>
+              <div>
+                <div class="q-option-label" data-lang="fr">Vente d'un immeuble, d'actions ou d'autres biens</div>
+                <div class="q-option-label" data-lang="en">Sale of real estate, shares, or other assets</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="q-btn-row">
+            <button class="q-btn q-btn-secondary" onclick="closeT1Modal()" data-lang="fr">Annuler</button>
+            <button class="q-btn q-btn-secondary" onclick="closeT1Modal()" data-lang="en">Cancel</button>
+            <button class="q-btn q-btn-primary" onclick="evaluateT1()" data-lang="fr">Voir ma catégorie →</button>
+            <button class="q-btn q-btn-primary" onclick="evaluateT1()" data-lang="en">See my category →</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Result -->
+        <div class="q-step" id="q-step-2">
+          <div class="q-result" id="q-result-content"></div>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -1566,7 +1532,6 @@
     </div>
   </footer>
 
-  <script src="https://js.stripe.com/v3/"></script>
   <script>
     // ── Language toggle ──
     function setLang(lang) {
@@ -1577,17 +1542,118 @@
       updateSummary();
     }
 
-    // ── Stripe setup ──
-    const stripe = Stripe('pk_test_51TgmbO9ttmw544mTmrAEcVbt22av6VWuJGBnfhbMzp2jQZLEiiHMGBe7grZ6lcWYm96EoulWd7tcENDgxXIxIe5300n6N5cQTz');
-    const elements = stripe.elements();
-    const cardElement = elements.create('card', {
-      style: {
-        base: { fontFamily: 'Outfit, sans-serif', fontSize: '14px', color: '#1a1a1a', '::placeholder': { color: '#aaa' } }
-      }
-    });
-    cardElement.mount('#card-element');
+    function isEn() { return document.body.classList.contains('lang-en'); }
 
-    // ── Booking logic ──
+    // ── Stripe Payment Links ──
+    const STRIPE_LINKS = {
+      simple:   'https://buy.stripe.com/fZu00cfDv24MgHSd7ZdUY00',
+      standard: 'https://buy.stripe.com/7sYcMY9f738Q77i3xpdUY01',
+      complex:  'https://buy.stripe.com/5kQ7sE76ZgZG0IU4BtdUY02'
+    };
+
+    // ── T1 Questionnaire ──
+    function openT1Questionnaire() {
+      document.querySelectorAll('.q-option').forEach(o => o.classList.remove('checked'));
+      document.getElementById('q-step-1').classList.add('active');
+      document.getElementById('q-step-2').classList.remove('active');
+      document.getElementById('t1-modal').classList.add('open');
+    }
+
+    function closeT1Modal() {
+      document.getElementById('t1-modal').classList.remove('open');
+    }
+
+    function toggleQOption(el) { el.classList.toggle('checked'); }
+
+    function evaluateT1() {
+      const en = isEn();
+      const checked = document.querySelectorAll('.q-option.checked');
+
+      let maxWeight = 0;
+      const reasons = [];
+
+      checked.forEach(opt => {
+        const w = parseInt(opt.dataset.weight);
+        if (w > maxWeight) maxWeight = w;
+        const labelEl = opt.querySelector(en ? '[data-lang="en"].q-option-label' : '[data-lang="fr"].q-option-label');
+        if (labelEl) reasons.push(labelEl.textContent.trim());
+      });
+
+      let category, badge, badgeClass, title, desc, price, link;
+
+      if (checked.length === 0 || (checked.length === 1 && parseInt(checked[0].dataset.weight) === 0)) {
+        category = 'simple';
+        badge = 'Simple';
+        badgeClass = 'badge-simple';
+        title = 'T1 — Simple';
+        desc = en
+          ? 'Your return looks straightforward — employment income with few or no additional deductions.'
+          : 'Votre déclaration semble simple — revenus d\'emploi avec peu ou pas de déductions supplémentaires.';
+        price = en ? 'Estimated $225 – $325 CAD' : 'Estimé $225 – $325 CAD';
+        link = STRIPE_LINKS.simple;
+      } else if (maxWeight <= 1) {
+        category = 'standard';
+        badge = 'Standard';
+        badgeClass = 'badge-standard';
+        title = 'T1 — Standard';
+        desc = en
+          ? 'Your return includes several slips and deductions that require additional analysis.'
+          : 'Votre déclaration comporte plusieurs feuillets et déductions qui nécessitent une analyse plus approfondie.';
+        price = en ? 'Estimated $350 – $500 CAD' : 'Estimé $350 – $500 CAD';
+        link = STRIPE_LINKS.standard;
+      } else {
+        category = 'complex';
+        badge = en ? 'Complex' : 'Complexe';
+        badgeClass = 'badge-complex';
+        title = en ? 'T1 — Complex' : 'T1 — Complexe';
+        desc = en
+          ? 'Your return involves complex elements that require specialized tax analysis.'
+          : 'Votre déclaration comporte des éléments complexes qui nécessitent une analyse fiscale spécialisée.';
+        price = en ? 'Estimated $500 – $900+ CAD' : 'Estimé $500 – $900+ CAD';
+        link = STRIPE_LINKS.complex;
+      }
+
+      const reasonsLabel = en ? 'Elements identified in your file' : 'Éléments identifiés dans votre dossier';
+      const payLabel = en ? 'Pay deposit & confirm file' : 'Payer le dépôt et confirmer mon dossier';
+      const restartLabel = en ? 'Start over' : 'Recommencer';
+      const noteLabel = en
+        ? 'The deposit is deducted from the final fee. Frédéric will confirm the exact amount before starting work.'
+        : 'Le dépôt est déduit des honoraires finaux. Frédéric confirmera le montant exact avant de débuter les travaux.';
+
+      const reasonsHTML = reasons.length > 0
+        ? `<div class="q-result-reasons">
+            <div class="q-result-reasons-label">${reasonsLabel}</div>
+            ${reasons.map(r => `<div class="q-result-reason-item">${r}</div>`).join('')}
+           </div>`
+        : '';
+
+      document.getElementById('q-result-content').innerHTML = `
+        <span class="q-result-badge ${badgeClass}">${badge}</span>
+        <div class="q-result-title">${title}</div>
+        <div class="q-result-desc">${desc}</div>
+        <div class="q-result-price">${price}</div>
+        ${reasonsHTML}
+        <a href="${link}" target="_blank" class="q-stripe-btn">${payLabel}</a>
+        <p style="font-size:12px;color:var(--text-light);line-height:1.6;margin-bottom:16px;">${noteLabel}</p>
+        <div class="q-divider"></div>
+        <button class="q-restart" onclick="restartQuestionnaire()">${restartLabel}</button>
+      `;
+
+      document.getElementById('q-step-1').classList.remove('active');
+      document.getElementById('q-step-2').classList.add('active');
+    }
+
+    function restartQuestionnaire() {
+      document.querySelectorAll('.q-option').forEach(o => o.classList.remove('checked'));
+      document.getElementById('q-step-2').classList.remove('active');
+      document.getElementById('q-step-1').classList.add('active');
+    }
+
+    document.getElementById('t1-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeT1Modal();
+    });
+
+    // ── Booking logic (non-T1 services) ──
     let selectedServices = [];
 
     function toggleService(el) {
@@ -1607,15 +1673,13 @@
     }
 
     function updateSummary() {
-      const isEn = document.body.classList.contains('lang-en');
+      const en = isEn();
       const linesEl = document.getElementById('booking-lines');
       const totalEl = document.getElementById('booking-total');
       const payBtn = document.getElementById('open-payment-btn');
       const payBtnEn = document.getElementById('open-payment-btn-en');
 
-      // Clear lines (keep empty messages)
-      const existing = linesEl.querySelectorAll('.booking-line');
-      existing.forEach(e => e.remove());
+      linesEl.querySelectorAll('.booking-line').forEach(e => e.remove());
 
       const emptyFr = document.getElementById('empty-fr');
       const emptyEn = document.getElementById('empty-en');
@@ -1637,7 +1701,7 @@
         total += s.deposit;
         const line = document.createElement('div');
         line.className = 'booking-line';
-        line.innerHTML = `<span class="booking-line-name">${isEn ? s.name_en : s.name_fr}</span><span class="booking-line-price">$${s.deposit}</span>`;
+        line.innerHTML = `<span class="booking-line-name">${en ? s.name_en : s.name_fr}</span><span class="booking-line-price">$${s.deposit}</span>`;
         linesEl.appendChild(line);
       });
 
@@ -1646,81 +1710,11 @@
       payBtnEn.disabled = false;
     }
 
-    // ── Modal ──
-    function openModal() {
-      const isEn = document.body.classList.contains('lang-en');
-      const total = selectedServices.reduce((sum, s) => sum + s.deposit, 0);
-      const names = selectedServices.map(s => isEn ? s.name_en : s.name_fr).join(', ');
-      const summaryEl = document.getElementById('modal-summary');
-      summaryEl.innerHTML = isEn
-        ? `Services: <strong>${names}</strong><br>Deposit due today: <strong>$${total} CAD</strong>`
-        : `Services: <strong>${names}</strong><br>Dépôt dû aujourd'hui: <strong>${total} $ CAD</strong>`;
-
-      // Fix pay button display for current language
-      const payBtn = document.getElementById('pay-btn');
-      const payBtnEn = document.getElementById('pay-btn-en');
-      if (isEn) { payBtn.style.display = 'none'; payBtnEn.style.display = 'block'; }
-      else { payBtn.style.display = 'block'; payBtnEn.style.display = 'none'; }
-
-      document.getElementById('modal-overlay').classList.add('open');
-      document.getElementById('payment-message').textContent = '';
-    }
-
-    function closeModal() {
-      document.getElementById('modal-overlay').classList.remove('open');
-    }
-
-    // Close modal on overlay click
-    document.getElementById('modal-overlay').addEventListener('click', function(e) {
-      if (e.target === this) closeModal();
-    });
-
-    // ── Payment submission ──
-    async function submitPayment() {
-      const isEn = document.body.classList.contains('lang-en');
-      const name = document.getElementById('client-name').value.trim();
-      const email = document.getElementById('client-email').value.trim();
-      const msgEl = document.getElementById('payment-message');
-
-      if (!name || !email) {
-        msgEl.textContent = isEn ? 'Please fill in your name and email.' : 'Veuillez remplir votre nom et courriel.';
-        return;
-      }
-
-      const payBtn = document.getElementById(isEn ? 'pay-btn-en' : 'pay-btn');
-      payBtn.disabled = true;
-      payBtn.textContent = isEn ? 'Processing...' : 'Traitement...';
-      msgEl.textContent = '';
-
-      const total = selectedServices.reduce((sum, s) => sum + s.deposit, 0);
-      const serviceNames = selectedServices.map(s => isEn ? s.name_en : s.name_fr).join(', ');
-
-      // Create PaymentIntent via Stripe (test mode — needs backend for production)
-      // For now, tokenize the card and show confirmation
-      const { paymentMethod, error } = await stripe.createPaymentMethod({
-        type: 'card',
-        card: cardElement,
-        billing_details: { name, email }
-      });
-
-      if (error) {
-        msgEl.textContent = error.message;
-        payBtn.disabled = false;
-        payBtn.textContent = isEn ? 'Pay deposit' : 'Payer le dépôt';
-        return;
-      }
-
-      // Success state (test mode)
-      document.querySelector('.modal').innerHTML = `
-        <div style="text-align:center; padding: 20px 0;">
-          <div style="font-size:48px; margin-bottom:16px;">✅</div>
-          <h3 style="font-family:'Cormorant Garamond',serif; font-size:24px; color:var(--navy); margin-bottom:8px;">${isEn ? 'Deposit confirmed!' : 'Dépôt confirmé!'}</h3>
-          <p style="font-size:14px; color:var(--text-mid); margin-bottom:6px;">${isEn ? 'Services' : 'Services'}: <strong>${serviceNames}</strong></p>
-          <p style="font-size:14px; color:var(--text-mid); margin-bottom:20px;">${isEn ? 'Amount' : 'Montant'}: <strong>$${total} CAD</strong></p>
-          <p style="font-size:13px; color:var(--text-light); margin-bottom:24px;">${isEn ? 'A confirmation will be sent to ' : 'Une confirmation sera envoyée à '}<strong>${email}</strong>.</p>
-          <button onclick="closeModal(); location.reload();" style="background:var(--navy);color:white;border:none;padding:12px 28px;border-radius:4px;font-size:13px;cursor:pointer;font-family:'Outfit',sans-serif;">${isEn ? 'Close' : 'Fermer'}</button>
-        </div>
-      `;
+    function openPaymentModal() {
+      const en = isEn();
+      const names = selectedServices.map(s => en ? s.name_en : s.name_fr).join(', ');
+      const subject = encodeURIComponent('Dépôt — ' + names);
+      window.location.href = 'mailto:frederic@quanaccounting.com?subject=' + subject;
     }
   </script>
 
