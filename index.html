@@ -1090,7 +1090,7 @@
                 <div class="pricing-tier-detail" data-lang="fr">1–2 feuillets, aucune annexe complexe</div>
                 <div class="pricing-tier-detail" data-lang="en">1–2 slips, no complex schedules</div>
               </div>
-              <div class="pricing-tier-price">$225 – $325<span data-lang="fr">par déclaration</span><span data-lang="en">per return</span></div>
+              <div class="pricing-tier-price">$200<span data-lang="fr">par déclaration</span><span data-lang="en">per return</span></div>
             </div>
             <div class="pricing-tier">
               <div>
@@ -1099,7 +1099,7 @@
                 <div class="pricing-tier-detail" data-lang="fr">Plusieurs feuillets, REER, dons, médical</div>
                 <div class="pricing-tier-detail" data-lang="en">Multiple slips, RRSP, donations, medical</div>
               </div>
-              <div class="pricing-tier-price">$350 – $500<span data-lang="fr">par déclaration</span><span data-lang="en">per return</span></div>
+              <div class="pricing-tier-price">$300<span data-lang="fr">par déclaration</span><span data-lang="en">per return</span></div>
             </div>
             <div class="pricing-tier">
               <div>
@@ -1589,7 +1589,7 @@
         desc = en
           ? 'Your return looks straightforward — employment income with few or no additional deductions.'
           : 'Votre déclaration semble simple — revenus d\'emploi avec peu ou pas de déductions supplémentaires.';
-        price = en ? 'Estimated $225 – $325 CAD' : 'Estimé $225 – $325 CAD';
+        price = en ? 'Estimated $200 CAD' : 'Estimé $200 CAD';
         link = STRIPE_LINKS.simple;
       } else if (maxWeight <= 1) {
         category = 'standard';
@@ -1599,7 +1599,7 @@
         desc = en
           ? 'Your return includes several slips and deductions that require additional analysis.'
           : 'Votre déclaration comporte plusieurs feuillets et déductions qui nécessitent une analyse plus approfondie.';
-        price = en ? 'Estimated $350 – $500 CAD' : 'Estimé $350 – $500 CAD';
+        price = en ? 'Estimated $300 CAD' : 'Estimé $300 CAD';
         link = STRIPE_LINKS.standard;
       } else {
         category = 'complex';
